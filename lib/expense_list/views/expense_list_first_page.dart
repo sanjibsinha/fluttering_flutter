@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'expense_list_blank_page.dart';
 import 'expense_list_second_apge.dart';
 
 class ExpenseListFirstPage extends StatelessWidget {
@@ -25,6 +26,19 @@ class ExpenseListFirstPage extends StatelessWidget {
             },
           ),
         ],
+      ),
+      body: ExpenseListBlankPage(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // handle the press
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ExpenseListSecondPage(),
+            ),
+          );
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
