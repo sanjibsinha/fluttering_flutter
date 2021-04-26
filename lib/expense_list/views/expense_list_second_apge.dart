@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ExpenseListSecondPage extends StatefulWidget {
+import 'second_page_body.dart';
+
+class ExpenseListSecondPage extends StatelessWidget {
   ExpenseListSecondPage({Key? key}) : super(key: key);
 
-  @override
-  _ExpenseListSecondPageState createState() => _ExpenseListSecondPageState();
-}
-
-class _ExpenseListSecondPageState extends State<ExpenseListSecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,26 +15,14 @@ class _ExpenseListSecondPageState extends State<ExpenseListSecondPage> {
         ),
         actions: [
           IconButton(
-              onPressed: () {
-                return Navigator.pop(context);
-              },
-              icon: Icon(Icons.backpack)),
+            onPressed: () {
+              return Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back),
+          ),
         ],
       ),
       body: SecondPageBody(),
-    );
-  }
-}
-
-class SecondPageBody extends StatelessWidget {
-  const SecondPageBody({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Text('data'),
-      ],
     );
   }
 }
