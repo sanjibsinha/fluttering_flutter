@@ -20,7 +20,7 @@ class ExpenseListFirstPage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ExpenseListSecondPage(),
+                  builder: (cx) => ExpenseListSecondPage(),
                 ),
               );
             },
@@ -34,7 +34,9 @@ class ExpenseListFirstPage extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => ExpenseListSecondPage(),
+              builder: (context) {
+                return ExpenseListSecondPage();
+              },
             ),
           );
         },
