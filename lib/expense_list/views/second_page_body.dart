@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import '../controllers/display_expenses_list.dart';
 import '../models/expense_list.dart';
 import '../controllers/about_expense_widget.dart';
 
@@ -12,6 +13,10 @@ class SecondPageBody extends StatefulWidget {
 
 class _SecondPageBodyState extends State<SecondPageBody> {
   final List<ExpenseList> expense = [];
+
+  String? get name => null;
+
+  double? get amount => null;
   void addExpenses(String name, double amount) {
     final expenses = ExpenseList(
       id: DateTime.now().toString(),
@@ -80,38 +85,7 @@ class _SecondPageBodyState extends State<SecondPageBody> {
             ],
           ),
         ),
-        Container(
-          margin: EdgeInsets.all(15),
-          padding: EdgeInsets.all(5),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(
-              color: Colors.white38,
-              width: 5,
-            ),
-            boxShadow: [
-              BoxShadow(
-                offset: const Offset(3.0, 3.0),
-                blurRadius: 5.0,
-                spreadRadius: 2.0,
-              ),
-            ],
-          ),
-          child: Column(
-            children: expense.map((e) {
-              return Column(
-                children: [
-                  Text(
-                    e.name,
-                  ),
-                  Text(
-                    e.amount.toString(),
-                  ),
-                ],
-              );
-            }).toList(),
-          ),
-        ),
+        DisplayExpenses(expense: expense),
       ],
     );
   }
